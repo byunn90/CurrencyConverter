@@ -14,6 +14,7 @@ export default function App() {
           `https://api.frankfurter.app/latest?amount=${amount}&from=${fromCur}&to=${toCur}`
         );
         const data = await res.json();
+        console.log(data);
         setConverted(data.rates[toCur]);
         setIsLoading(false);
       }
@@ -35,12 +36,16 @@ export default function App() {
         <option value="EUR">EUR</option>
         <option value="CAD">CAD</option>
         <option value="INR">INR</option>
+        <option value="TRY">TRY</option>
+        <option value="AUD">AUD</option>
       </select>
       <select value={toCur} onChange={(e) => setToCur(e.target.value)}>
         <option value="USD">USD</option>
         <option value="EUR">EUR</option>
         <option value="CAD">CAD</option>
         <option value="INR">IINR</option>
+        <option value="TRY">TRY</option>
+        <option value="AUD">AUD</option>
       </select>
       <p>
         {converted} {toCur}
